@@ -15,6 +15,8 @@ function Disable-UserInput($seconds) {
     $userInput::BlockInput($false)
 }
 
+sndvol -f 111111111
+[void][System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms') ; [System.Windows.Forms.SendKeys]::SendWait("{HOME}")
 Start-Process chrome https://youtu.be/xm3YgoEiEDc?t=1 ; Start-Sleep -Milliseconds 750 ; [void][System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms') ;Start-Sleep -s 2; [System.Windows.Forms.SendKeys]::SendWait("f")
 
-Disable-UserInput -seconds 30 | Out-Null
+Disable-UserInput -seconds 10 | Out-Null
